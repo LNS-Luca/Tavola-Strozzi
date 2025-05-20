@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli - Castel Sant'Elmo</title>
+    <!-- Collegamento a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Collegamento a Font Awesome per le icone -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background-image: url('https://www.latestatamagazine.it/wp-content/uploads/2023/01/Lima-copertina-articolo-Il-Castel-SantElmo-un-complesso-panoramico-e-ricco-di-storia.jpg'); /* Immagine di Castel Sant'Elmo */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .nav-icon {
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem; 
+        }
+        
+        .detail-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .detail-section {
+            padding: 3rem 0;
+        }
+        
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #343a40;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">La Tavola Strozzi</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home nav-icon"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dettagli.html">
+                            <i class="fas fa-info-circle nav-icon"></i>Dettagli
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="confronto.html">
+                            <i class="fas fa-exchange-alt nav-icon"></i>Confronto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4"><font color="white"><b>Castel Sant'Elmo</b></font></h1>
+        </div>
+    </section>
+
+    <!-- Contenuto Dettagliato -->
+    <div class="container detail-section">
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h2>Storia e Funzione</h2>
+                <p>Castel Sant'Elmo è una fortezza storica situata sulla collina del Vomero, nei pressi della Certosa di San Martino. Visibile sullo sfondo della Tavola Strozzi, la sua costruzione originale risale al XIV secolo, durante il regno di Roberto d'Angiò, che lo volle inizialmente come torre d'avvistamento (Belforte). L'incarico per i lavori fu affidato a Tino da Camaino, e si conclusero sotto il regno di Giovanna I.</p>
+                <p>Nel corso della sua storia, il castello ha subito varie riforme e ha avuto diverse funzioni. Dapprima utilizzato come fortezza militare, divenne in un secondo momento un punto di osservazione strategico. Nel 1416, la regina Giovanna II vendette il castello ad Alfonso d'Aragona. Durante le contese tra francesi e spagnoli per il controllo del Regno di Napoli, la fortezza divenne un obiettivo strategico cruciale.</p>
+                <p>Nella Tavola Strozzi, la sua posizione dominante sulla collina del Vomero, accanto alla Certosa, è chiaramente indicata, simboleggiando il controllo e la difesa della città dall'alto.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://www.castcampania.it/images/Il-Belforte-nella-tavola-Strozzi.jpg" alt="Dettaglio Castel Sant'Elmo - Tavola Strozzi" class="detail-img">
+                <div class="text-center text-muted"><small>Castel Sant'Elmo sulla collina del Vomero</small></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>Progetto scolastico sulla Tavola Strozzi</p>
+            <p>© 2025 - Realizzato con Bootstrap</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS e jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
