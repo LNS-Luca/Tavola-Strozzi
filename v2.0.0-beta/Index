@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tavola Strozzi</title>
+    <!-- Collegamento a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Collegamento a Font Awesome per le icone -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/dd/Tavola_Strozzi_-_Napoli.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: black();
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #0d6efd;
+            text-align: center;
+            display: block;
+        }
+        
+        .icon-container {
+            text-align: center;
+            padding: 2rem 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .icon-container:hover {
+            transform: translateY(-10px);
+        }
+        
+        .icon-container h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .icon-container p {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+        
+        .nav-icon {
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+        
+        a.icon-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">La Tavola Strozzi</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home nav-icon"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dettagli.html">
+                            <i class="fas fa-info-circle nav-icon"></i>Dettagli
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="confronto.html">
+                            <i class="fas fa-exchange-alt nav-icon"></i>Confronto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4"><font color="white"><b>La Tavola Strozzi</b></h1>
+            <p class="lead fs-3"><b>Un viaggio attraverso l'antica Napoli del XV secolo</b><font color="black"></p>
+        </div>
+    </section>
+
+    <!-- Sezione delle icone principali -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Esplora la Tavola Strozzi</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-5">
+                    <a href="index.html" class="icon-link">
+                        <div class="icon-container">
+                            <i class="fas fa-home feature-icon"></i>
+                            <h3 class="text-center">Home</h3>
+                            <p class="text-center">Introduzione generale alla Tavola Strozzi, la sua storia e importanza culturale.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <a href="dettagli.html" class="icon-link">
+                        <div class="icon-container">
+                            <i class="fas fa-search-plus feature-icon"></i>
+                            <h3 class="text-center">Dettagli</h3>
+                            <p class="text-center">Esplorazione dettagliata degli elementi e dei significati nascosti all'interno dell'opera.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <a href="confronto.html" class="icon-link">
+                        <div class="icon-container">
+                            <i class="fas fa-exchange-alt feature-icon"></i>
+                            <h3 class="text-center">Confronto</h3>
+                            <p class="text-center">Confronto tra la veduta storica rappresentata nella Tavola e la Napoli contemporanea.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>Progetto scolastico sulla Tavola Strozzi</p>
+            <p>© 2025 - Realizzato con Bootstrap</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS e jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
