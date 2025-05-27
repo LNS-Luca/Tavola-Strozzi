@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confronto Storico - La Tavola Strozzi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/2/2b/Napoli_veduta_Mappa_del_Duca_di_Noja.jpg?20161115200759');
+            background-size: cover;
+            background-position: center;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-weight: bold;
+        }
+        
+        .nav-icon {
+            margin-right: 0.5rem;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+        
+        .comparison-section {
+            padding: 3rem 0;
+        }
+
+        .comparison-section h2 {
+            font-weight: 600;
+            color: #343a40;
+        }
+        
+        .comparison-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+        }
+        
+        .comparison-title {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .comparison-img-wrapper {
+            width: 100%;
+            max-height: 300px; 
+            overflow: hidden;
+            background-color: #e9ecef; 
+        }
+
+        .comparison-img-wrapper img {
+            width: 100%;
+            height: auto; 
+            max-height: 300px; 
+            object-fit: cover; 
+            display: block; 
+        }
+
+        .comparison-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .comparison-content h4 {
+            color: #343a40;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .comparison-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .timeline-section h3 {
+            color: #343a40;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #0d6efd;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 1.5rem 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+            width: 45%;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.075);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid #0d6efd;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -40px;
+            transform: translateX(50%);
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -40px;
+            transform: translateX(-50%);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item p {
+            color: #555;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        @media (max-width: 767.98px) {
+            .timeline::before {
+                left: 20px;
+                transform: translateX(0);
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3.5rem;
+                padding-right: 1.5rem;
+            }
+            .timeline-item::after {
+                left: -10px !important;
+                transform: translateX(0) !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">La Tavola Strozzi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-landmark nav-icon"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dettagli.html">
+                            <i class="fas fa-search-plus nav-icon"></i>Dettagli
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="confronto.html">
+                            <i class="fas fa-layer-group nav-icon"></i>Confronto
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galleria.html">
+                            <i class="fas fa-images nav-icon"></i>Galleria
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Confronto Storico</h1>
+            <p class="lead fs-4">La Napoli del XV secolo e la metropoli contemporanea</p>
+        </div>
+    </section>
+
+    <main class="container comparison-section">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2>Napoli: Un Viaggio Attraverso i Secoli</h2>
+                <p class="lead">Esploriamo come è cambiata la città dal Rinascimento ai giorni nostri, osservando persistenze e trasformazioni.</p>
+            </div>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-md-6 d-flex">
+                <div class="comparison-card">
+                    <h3 class="comparison-title">Napoli nel XV Secolo</h3>
+                    <div class="comparison-img-wrapper">
+                        <img src="https://i1.wp.com/www.napoli-turistica.com/wp-content/uploads/2020/06/Tavola_Strozzi-Napoli.jpg?resize=1024%2C576&ssl=1" alt="Tavola Strozzi - Napoli nel XV secolo">
+                    </div>
+                    <div class="comparison-content">
+                        <h4>La Città nella Tavola Strozzi</h4>
+                        <p>La Tavola Strozzi ci restituisce l'immagine di una Napoli medievale-rinascimentale, cinta da possenti mura aragonesi. Il Castel Nuovo domina la scena portuale, brulicante di attività commerciali e navali, cuore pulsante di una capitale mediterranea.</p>
+                        <p>L'impianto urbano è compatto, con un fitto tessuto di edifici, chiese e monasteri che definiscono lo skyline dell'epoca. Si distinguono chiaramente il Molo Grande e le fortificazioni che proteggevano la città dal mare.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex">
+                  <div class="comparison-card">
+                    <h3 class="comparison-title">Napoli Oggi</h3>
+                    <div class="comparison-img-wrapper">
+                        <img src="https://th.bing.com/th/id/R.8b7a72e08183a150fe29651b117a9c18?rik=TzIDEjoz4eTGdA&riu=http%3a%2f%2fstatic.turistipercaso.it%2foldfoto%2fupload%2f2bkvsdgsqawnsv3.T0.jpg&ehk=m%2btJ2WL%2fdCqjgcLYCv7r9%2fYp4exYTjMRBKQtBKatAY0%3d&risl=&pid=ImgRaw&r=0" alt="Napoli contemporanea vista dal mare">
+                    </div>
+                    <div class="comparison-content">
+                        <h4>La Metropoli Contemporanea</h4>
+                        <p>La Napoli attuale è una metropoli vibrante, il cui tessuto urbano si è espanso ben oltre gli antichi confini murari. Il lungomare, ridisegnato e ampliato, offre nuove prospettive sulla città, che conserva gelosamente il suo nucleo storico, Patrimonio UNESCO.</p>
+                        <p>Il Castel Nuovo è ancora un simbolo, ma oggi è immerso in un contesto urbano densamente costruito, con infrastrutture moderne. Il porto, pur mantenendo la sua importanza strategica, si è trasformato per accogliere le esigenze del traffico marittimo globale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row timeline-section">
+            <div class="col-12">
+                <h3>Principali Tappe Evolutive</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">XV Secolo</div>
+                        <p>Napoli aragonese come raffigurata nella Tavola Strozzi: città fortificata, centro di potere e commercio marittimo, con il Castel Nuovo come fulcro.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">XVI-XVII Secolo</div>
+                        <p>Dominio vicereale spagnolo: espansione urbana "extra moenia", costruzione di importanti edifici religiosi e palazzi nobiliari in stile barocco.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">XVIII-XIX Secolo</div>
+                        <p>Regno Borbonico e periodo post-unitario: grandi opere pubbliche, sviluppo di nuovi quartieri, parziale abbattimento delle mura e trasformazioni del lungomare.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">XX Secolo</div>
+                        <p>Crescita industriale, espansione verso la periferia, modernizzazione delle infrastrutture. Ferite della Seconda Guerra Mondiale e sfide della ricostruzione.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">XXI Secolo</div>
+                        <p>Riqualificazione del centro storico (Patrimonio UNESCO), sviluppo del turismo, potenziamento della rete di trasporti metropolitana e nuove sfide urbanistiche.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">Progetto scolastico sulla Tavola Strozzi © 2025 - Realizzato con Bootstrap</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
