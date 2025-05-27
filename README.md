@@ -13,3 +13,10 @@
 
 # v2.0.0-beta 20 maggio 2025
 ### aggiunti 5 elementi della tavola: faro di Napoli, Basilica di San Domenico Maggiore, Castel Sant’Elmo, Molo Angioino, Cattedrale di Napoli (duomo). <br> risolti bug e fatte diverse migliorie tecniche ed estetiche con aggiunta di diversi elementi. <br><br> pubblicato online il sito, visualizzabile al seguente link: [lns-luca.github.io/Tavola-Strozzi/](lns-luca.github.io/Tavola-Strozzi/) <br><br> possibili migliorie: trovare foto più adatte agli elementi, ottimizzare l’uso degli spazi vuoti.
+
+# v2.0.0-rc2 20 maggio 2025
+### v2.0.0-beta -> v2.0.0-rc2
+
+# v2.1.0-rc1 25 maggio 2025
+### v2.1.0-beta -> rc <br> Aggiunta una nuova sezione Galleria Immagini. Risolti bug e apportate diverse migliorie estetiche. problemi con l'https essendo alcune foto prese da fonti http.
+
