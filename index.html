@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Tavola Strozzi - Home</title>
+    <title>La Tavola Strozzi - Home, Itinerari e Contesto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
         
-        .hero-section {
+        .hero-section { /* Stile dalla vecchia index/opera_contesto */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/d/dd/Tavola_Strozzi_-_Napoli.jpg');
             background-size: cover;
             background-position: center;
@@ -32,7 +32,7 @@
             font-weight: bold;
         }
         
-        .features-section {
+        .features-section, .itinerary-section-main { /* Aggiunto itinerary-section-main per specificità */
             padding: 4rem 0;
         }
 
@@ -99,6 +99,54 @@
             text-decoration: none;
             color: inherit;
         }
+
+        /* Stili per itinerario (dalla precedente index.html) */
+        .itinerary-point {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .itinerary-point h3 {
+            color: #0d6efd;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .itinerary-point h3 i {
+            margin-right: 0.75rem;
+        }
+
+        .itinerary-point ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .itinerary-point li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        .itinerary-point li:last-child {
+            border-bottom: none;
+        }
+        .itinerary-point li i {
+            margin-right: 0.5rem;
+            color: #0d6efd;
+            width: 20px; /* Allinea le icone */
+            text-align: center;
+        }
+        .google-maps-link {
+            background-color: #0d6efd;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .google-maps-link:hover {
+            background-color: #0a58ca;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +160,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">
-                            <i class="fas fa-landmark nav-icon"></i>Home
+                            <i class="fas fa-home nav-icon"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
@@ -138,16 +186,17 @@
     <section class="hero-section">
         <div class="container">
             <h1 class="display-4">La Tavola Strozzi</h1>
-            <p class="lead fs-3">Un viaggio attraverso l'antica Napoli del XV secolo</p>
+            <p class="lead fs-3">Un viaggio attraverso l'antica Napoli del XV secolo e come visitarla.</p>
         </div>
     </section>
 
-    <section class="features-section">
-        <div class="container">
+    <main class="container">
+        <section id="esplora" class="features-section">
             <h2 class="section-title">Esplora la Tavola Strozzi</h2>
+            <p class="text-center lead mb-5">Scopri i vari aspetti di quest'opera straordinaria e il suo impatto sulla rappresentazione di Napoli.</p>
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="index.html" class="feature-link">
+                    <a href="index.html#esplora" class="feature-link"> <!-- Punta a questa stessa sezione -->
                         <div class="feature-card">
                             <div>
                                 <i class="fas fa-landmark feature-icon"></i>
@@ -191,8 +240,65 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="itinerario-museo" class="itinerary-section-main">
+            <h2 class="section-title">Raggiungere il Museo di San Martino</h2>
+            <p class="text-center lead mb-4">La Tavola Strozzi è conservata presso il Museo di San Martino: Largo San Martino, 5, Vomero – Napoli.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="itinerary-point">
+                        <h3><i class="fas fa-map-marker-alt"></i>Da Liceo G.B. Vico (Via Salvator Rosa)</h3>
+                        <ul>
+                            <li><i class="fas fa-walking"></i>A piedi fino alla fermata Salvator Rosa (Metro Linea 1) – circa 5 minuti.</li>
+                            <li><i class="fas fa-subway"></i>Prendi la Metro Linea 1 in direzione Piscinola.</li>
+                            <li><i class="fas fa-sign-out-alt"></i>Scendi alla fermata Vanvitelli (1 fermata).</li>
+                            <li><i class="fas fa-hiking"></i>Da lì, cammina in salita per 10-15 minuti fino al Museo di San Martino proseguendo per via Cimarosa e poi sulla destra per via Tito Angelini.</li>
+                            <li><i class="fas fa-flag-checkered"></i>Alla fine sarai giunto al Museo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="itinerary-point">
+                        <h3><i class="fas fa-map-marker-alt"></i>Da Arenella (es. Piazza Medaglie d'Oro)</h3>
+                        <ul>
+                            <li><i class="fas fa-subway"></i>Prendi la Metro Linea 1 dalla stazione Medaglie d'Oro in direzione Piscinola.</li>
+                            <li><i class="fas fa-sign-out-alt"></i>Scendi a Vanvitelli.</li>
+                            <li><i class="fas fa-hiking"></i>Cammina fino al museo per 10-15 min (stessa tratta dalla metro di Vanvitelli) <br>OPPURE<br> <i class="fas fa-train"></i>prendi la Funicolare di Montesanto da Piazza Fuga fino a Morghen, poi cammina 5 minuti.</li>
+                        </ul>
+                    </div>
+
+                    <div class="itinerary-point">
+                        <h3><i class="fas fa-map-marker-alt"></i>Dal Centro Storico (es. Piazza del Gesù)</h3>
+                        <ul>
+                            <li><i class="fas fa-walking"></i>Cammina fino alla fermata Dante (Metro Linea 1) – circa 7 minuti.</li>
+                            <li><i class="fas fa-subway"></i>Prendi la Metro Linea 1 in direzione Piscinola.</li>
+                            <li><i class="fas fa-sign-out-alt"></i>Scendi a Vanvitelli (3 fermate).</li>
+                            <li><i class="fas fa-hiking"></i>Da lì, percorri la stessa tratta già detta o prendi la funicolare come sopra.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="itinerary-point">
+                        <h3><i class="fas fa-map-marker-alt"></i>Dal Centro Direzionale (zona Tribunale)</h3>
+                        <ul>
+                            <li><i class="fas fa-train"></i>Prendi la Circumvesuviana dal Centro Direzionale fino a Piazza Garibaldi.</li>
+                            <li><i class="fas fa-exchange-alt"></i>Cambia alla Metro Linea 1 da Garibaldi, direzione Piscinola.</li>
+                            <li><i class="fas fa-sign-out-alt"></i>Scendi a Vanvitelli (6 fermate).</li>
+                            <li><i class="fas fa-hiking"></i>Cammina (10-15 minuti) o usa la Funicolare di Montesanto fino a Morghen, poi cammina 5 minuti.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerario-luoghi" class="text-center mt-4 mb-5 pb-4"> <!-- Aggiunto pb-4 per spazio prima del footer -->
+            <h2 class="section-title">Esplora i Luoghi della Tavola Strozzi</h2>
+            <p class="lead mb-4">Segui un itinerario sulla mappa per scoprire i monumenti e i luoghi iconici di Napoli rappresentati nell'opera.</p>
+            <a href="https://www.google.com/maps/dir/Castel+dell'Ovo,+Via+Eldorado,+3,+80132+Napoli+NA/Castel+Nuovo+-+Maschio+Angioino,+V.+Vittorio+Emanuele+III,+80133+Napoli+NA/Duomo+di+Santa+Maria+Assunta,+Via+Duomo,+147,+80138+Napoli+NA/Castel+Capuano,+Piazza+Enrico+de+Nicola,+74,+80139+Napoli+NA/Castello+del+Carmine,+Via+Nuova+Marina,+80142+Napoli+NA/Complesso+Monumentale+di+Santa+Chiara,+Via+Santa+Chiara,+49%2Fc,+80134+Napoli+NA/Certosa+e+Museo+di+San+Martino,+Largo+S.+Martino,+5,+80129+Napoli+NA/@40.8484045,14.2548982,14z/data=!4m43!4m42!1m5!1m1!1s0x133b09ac26357211:0x970c840bd5800ad!2m2!1d14.2476044!2d40.8283157!1m5!1m1!1s0x133b084e6e5d6497:0xc131a1902329c922!2m2!1d14.2527194!2d40.8384891!1m5!1m1!1s0x133b086a71dc7939:0x8bad90ad52187adc!2m2!1d14.2593205!2d40.8525429!1m5!1m1!1s0x133b09ff414730f5:0x7393eece0139aefb!2m2!1d14.2639352!2d40.8534889!1m5!1m1!1s0x133b09de2cec3ced:0x76eaf19d6aa91ba6!2m2!1d14.267496!2d40.8460013!1m5!1m1!1s0x133b08445a3df2b7:0x3ddf5c133d3072f3!2m2!1d14.2526378!2d40.8472262!1m5!1m1!1s0x133b0857f5a3a12d:0x173c2c637a5c3a9d!2m2!1d14.2407685!2d40.8436004?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn btn-lg google-maps-link" target="_blank">
+                <i class="fas fa-map-marked-alt me-2"></i>Scopri l'itinerario dei monumenti sulla mappa
+            </a>
+        </section>
+    </main>
 
     <footer class="text-center">
         <div class="container">
